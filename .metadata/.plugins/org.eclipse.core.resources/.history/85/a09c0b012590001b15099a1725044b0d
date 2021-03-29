@@ -1,0 +1,5 @@
+package br.ufg.inf.aula4.ctrl.negocio;
+
+public class AlunoNegocio {
+
+}

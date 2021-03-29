@@ -1,0 +1,52 @@
+package br.ufg.inf.aula4.ctrl.negocio;
+
+import java.util.List;
+
+import br.ufg.inf.aula4.ctrl.exception.AlunoException;
+import br.ufg.inf.aula4.ctrl.exception.CursoException;
+import br.ufg.inf.aula4.ctrl.exception.PessoaExection;
+import br.ufg.inf.aula4.model.dao.AlunoDAO;
+import br.ufg.inf.aula4.model.entities.Aluno;
+
+public class AlunoNegocio {
+	AlunoDAO dao = new AlunoDAO();
+
+	public Aluno inserir(Aluno aluno) throws AlunoException {
+		this.validarAluno(aluno);
+		dao.inserir(aluno);
+		return aluno;
+	}
+	
+	// READ
+	public List<Aluno> buscaTodos() throws AlunoException, CursoException, PessoaExection{
+		return dao.buscaTodos();	
+	}
+	
+	public Aluno buscaPorId(Integer id) throws AlunoException, CursoException, PessoaExection {
+		return dao.buscaPorId(id);
+	}
+	
+	
+	// UPDATE
+	
+	public Aluno alterar(Aluno aluno) throws AlunoException {		
+		this.validarAluno(aluno);
+		return dao.alterar(aluno);
+	}
+	
+	// DELETE
+	
+	public void excluir(Integer id) throws AlunoException {
+		dao.excluir(id);
+	}
+	
+	private void validarAluno(Aluno aluno) throws AlunoException, CursoException {
+		if (!aluno.getAtivo()) {
+			throw new AlunoException("Aluno não ativo.");
+		}
+		else if (aluno.getCurso().getNmCurso() == null || aluno.getCurso().getNmCurso().length() == 0) {
+			throw new CursoException("Nome da disciplina é obrigatório.");
+		}
+		else if ()
+	}
+}

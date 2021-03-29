@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="br.ufg.inf.aula4.ctrl.negocio.CursoNegocio"/>
+    <fullyQualifiedTypeName name="br.ufg.inf.aula4.ctrl.exception.AlunoException"/>
+    <fullyQualifiedTypeName name="br.ufg.inf.aula4.ctrl.exception.MatriculaException"/>
+</qualifiedTypeNameHistroy>
